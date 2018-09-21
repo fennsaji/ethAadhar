@@ -1,4 +1,4 @@
-import { ContractService } from './services/contract.service';
+// import { ContractService } from './services/contract.service';
 import { Component } from '@angular/core';
 
 @Component({

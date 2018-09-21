@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import { ContractService } from './services/contract.service';
+// import { ContractService } from './services/contract.service';
 
 @NgModule({
   declarations: [
@@ -11,7 +11,9 @@ import { ContractService } from './services/contract.service';
   imports: [
     BrowserModule
   ],
-  providers: [ContractService],
+  providers: [
+    // ContractService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
