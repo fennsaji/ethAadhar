@@ -1,33 +1,33 @@
 import { Injectable } from '@angular/core';
-import * as Web3 from 'web3';
-import *  as secrets from '../../../../secrets';
-import * as HDWalletProvider from 'truffle-hdwallet-provider';
+import Web3 from 'web3';
 
 declare let require: any;
+declare let window: any;
 
-let BallotFactory = require('../../../../build/Ballot.json');
+let AadharFactory = require('../../../../build/EthAadhar.json');
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class ContractService {
-  private provider: null;
+  private provider;
   private instance;
+  private web3;
 
   constructor() { 
-    this.provider = new HDWalletProvider(
-      secrets.accountMnemonic,
-      secrets.rinkebyNode
-    );
-  
-    let web3;
-    web3 = new Web3(this.provider);
-    
-    this.instance = new web3.eth.Contract(
-      JSON.parse(BallotFactory.interface),
-      secrets.deployedTo
-    );
+    this.init();
   }
 
+  async init() {
+    // this.web3 = new Web3(window.web3.currentProvider);
+    
+    this.instance = new this.web3.eth.Contract(
+      JSON.parse(AadharFactory.interface),
+      '0x22d1C08bE47e402f92Fa4b054065073c41EDE41A'
+    );
 
+    const manager = await this.instance.methods.chairperson();
+    console.log(manager);
+  }
 }
