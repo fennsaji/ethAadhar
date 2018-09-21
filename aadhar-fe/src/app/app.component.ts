@@ -1,3 +1,4 @@
+import { EthService } from './ethereum/eth.service';
 // import { ContractService } from './services/contract.service';
 import { Component } from '@angular/core';
 
@@ -9,5 +10,7 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'aadhar-fe';
 
-  constructor(private conSer: ContractService) {}
+  constructor(private ethSer: EthService) {
+    console.log(this.ethSer.getAccounts());
+  }
 }
