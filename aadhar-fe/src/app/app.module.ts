@@ -25,10 +25,13 @@ import { AadharsearchComponent } from './aadharsearch/aadharsearch.component';
     BrowserModule,
     RouterModule.forRoot([
       {path: 'home', component: HomeComponent},
-      {path: 'newuser', component: NewAadharComponent},
+      {path: 'newuser', component: NewAadharComponent, 
+        children: [
+          {path: 'addface', component: TakePicComponent}
+        ]},
       {path: 'search', component: AadharsearchComponent, 
         children: [
-          {path: 'result'}
+          {path: 'result', component: AadhardetailsComponent}
         ]},
       {path: '', component: HomeComponent},
     ])
