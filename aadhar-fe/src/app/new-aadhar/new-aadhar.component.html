@@ -1,0 +1,28 @@
+<form>
+  <br>
+  <div class="form-group row">
+    <label for="name" class="col-sm-2 col-form-label">Name</label>
+    <input type="text" class="form-control col-sm-10" id="name" aria-describedby="nameHelp" placeholder="Enter Name">
+  </div>
+
+  <div class="form-group row">
+      <label for="userid" class="col-sm-2 col-form-label">User ID</label>
+      <input type="number" class="form-control col-sm-10" id="userid" aria-describedby="idHelp" placeholder="Enter ID">
+  </div>
+
+  <div class="form-group row">
+      <label for="address" class="col-sm-2 col-form-label">Address</label>
+      <input type="text" class="form-control col-sm-10" id="address" aria-describedby="addressHelp" placeholder="Enter Address">
+  </div>
+
+  <div class="form-group row">
+      <label for="photo" class="col-sm-2 col-form-label">Add Face</label>
+      <div class="custom-file col-sm-7">
+          <input type="file" class="custom-file-input" id="photo" aria-describedby="inputGroupFile">
+          <label class="custom-file-label" for="photo">Choose file</label>
+      </div>
+      <div class="col-sm-1 text-center"><p>OR</p></div>
+      <button class="btn btn-outline-secondary col-sm-2" type="button" [routerLink]="['']">Click Photo</button>
+  </div>
+
+</form>

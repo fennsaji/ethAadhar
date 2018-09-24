@@ -1,4 +1,5 @@
-import { EthService } from './ethereum/eth.service';
+import { EthcontractService } from './services/ethcontract.service';
+// import { EthService } from './ethereum/eth.service';
 // import { ContractService } from './services/contract.service';
 import { Component } from '@angular/core';
 
@@ -10,7 +11,11 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'aadhar-fe';
 
-  constructor(private ethSer: EthService) {
-    console.log(this.ethSer.getAccounts());
+  constructor(private ethSer: EthcontractService) {
+    this.init();
+  }
+
+  async init() {
+    console.log(await this.ethSer.getAccountInfo());
   }
 }
