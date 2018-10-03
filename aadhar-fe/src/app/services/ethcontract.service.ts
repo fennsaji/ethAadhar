@@ -2,6 +2,7 @@ import { WEB3 } from './web3.token';
 import { HttpClient } from '@angular/common/http';
 import { Injectable, Inject } from '@angular/core';
 import * as Web3 from 'web3';
+import { Observable } from 'rxjs';
 
 declare let require: any;
 declare let window: any;
@@ -59,12 +60,27 @@ export class EthcontractService {
   }
 
   async createAadhar() {
-    console.log('aadh', this.aadharinfo);
     const {name, id, addr, face} = this.aadharinfo;
 
     // Send used for anything that changes state of contract
     await this.contractInstance.methods.createAadhar(name,id,addr, face).send()
   }
+ 
+  async getDetails(id: number, face?: string): Promise<boolean> {
+    // let faceArr = await this.contractInstance.methods.getFace(id).call();
 
+    // let res = await this.http.post<any>('http://localhost:8080/fetchFaceId', 
+    //   {userFace: face, userFaces: faceArr})
+    //   .toPromise();
+    
+    // if (res.match === true) {
+    //   let userInfo = await this.contractInstance.methods.getInfo(id).call();
+    //   return userInfo;
+    // } else {
+    //   return false;
+    // }
+    let userInfo = await this.contractInstance.methods.getInfo(id).call();
+    return userInfo;
+  }
 
 }

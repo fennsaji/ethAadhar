@@ -1,13 +1,13 @@
 <br>
 <div class="row">
     <div class="input-group mb-3 col-lg-4">
-        <input type="text" class="form-control" placeholder="Search ID" aria-label="Aadhar ID" 
-          aria-describedby="buttonSearch">
+        <input type="number" class="form-control" placeholder="Search ID" aria-label="Aadhar ID" 
+          aria-describedby="buttonSearch" [(ngModel)]="searchId">
         <div class="input-group-append">
-          <button class="btn btn-outline-secondary" type="button" id="buttonSearch">Search</button>
+          <button class="btn btn-outline-secondary" (click)="search()" type="button" id="buttonSearch">Search</button>
         </div>
       </div>
     <div class="container col-lg-8">
       <router-outlet></router-outlet>
-    </div>
+    </div> 
 </div>
