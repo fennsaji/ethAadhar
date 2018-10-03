@@ -16,6 +16,6 @@ export class AppComponent {
   }
 
   async init() {
-    console.log(await this.ethSer.getAccountInfo());
+    // console.log(await this.ethSer.getAccountInfo());
   }
 }

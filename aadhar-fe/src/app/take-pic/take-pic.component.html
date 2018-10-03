@@ -1,6 +1,9 @@
 <div id="app">
     <div><video #video id="video" width="640" height="480" autoplay></video></div>
-    <div><button id="snap" (click)="capture()">Snap Photo</button></div>
+    <div>
+        <p>Make sure your face is clearly visible</p>
+        <button id="snap" (click)="capture()">Capture</button>
+    </div>
     <canvas #canvas id="canvas" width="640" height="480"></canvas>
     <ul>
         <li *ngFor="let c of captures">
