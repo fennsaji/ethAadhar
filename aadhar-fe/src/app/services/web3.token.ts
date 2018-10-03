@@ -1,7 +1,6 @@
 import { InjectionToken } from '@angular/core';
 import Web3 from 'web3';
 
-declare let require: any;
 declare let window: any;
 declare let web3: any;
 

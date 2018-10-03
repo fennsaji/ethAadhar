@@ -1,6 +1,6 @@
 const Web3 = require('web3');  
 const HDWalletProvider = require('truffle-hdwallet-provider');
-const BallotFactory =  require('./build/Ballot.json');
+const BallotFactory =  require('./build/EthAadhar.json');
 const secrets = require('./secrets');
 
 const provider = new HDWalletProvider(
