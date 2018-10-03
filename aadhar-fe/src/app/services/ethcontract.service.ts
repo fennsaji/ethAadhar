@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 declare let require: any;
 declare let window: any;
 
-let tokenAbi = require('../../../../build/EthAadhar.json');
+let tokenAbi = require('../../../../contract-builder/build/EthAadhar.json');
 @Injectable({
   providedIn: 'root'
 })
